@@ -1,0 +1,60 @@
+# Build tools
+setuptools<81
+wheel
+
+# UI
+streamlit==1.38.0
+
+# LangChain
+langchain==0.2.14
+langchain-core==0.2.36
+langchain-community==0.2.12
+langchain-text-splitters==0.2.2
+langchain-mistralai==0.1.12
+langchain-openai==0.1.22   # Gemini / Groq / Ollama via their OpenAI-compatible APIs
+langchain-huggingface==0.0.3
+langchain-chroma==0.1.3
+
+# RAG / Vector DB
+# (chromadb 0.5.6 does not exist on PyPI -> 0.5.7 is the next compatible release)
+chromadb==0.5.7
+# chromadb 0.5.x telemetry breaks with posthog 6+; keep it below 6
+posthog<6
+sentence-transformers==3.0.1
+huggingface-hub==0.24.6
+transformers==4.44.2
+
+# Whisper
+faster-whisper==1.0.3
+
+# Documents (PDF / PowerPoint input)
+pypdf==4.3.1
+python-pptx==1.0.2
+
+# YouTube / Audio
+# yt-dlp is deliberately NOT pinned: YouTube changes often and old versions stop working.
+# [default] also installs yt-dlp-ejs (needed to solve YouTube's JavaScript challenge).
+# You also need a JavaScript runtime installed on the machine - Deno is the default one.
+yt-dlp[default]
+pydub==0.25.1
+ffmpeg-python==0.2.0
+
+# Translation
+deep-translator==1.11.4
+
+# Export
+reportlab==4.2.2
+fpdf2==2.7.9
+
+# Data
+pandas==2.2.2
+numpy==1.26.4
+
+# Utilities
+python-dotenv==1.0.1
+pydantic==2.8.2
+tiktoken==0.7.0
+requests==2.32.3
+# reportlab pulls in chardet; versions 6+ trigger a requests compatibility warning
+chardet<6
+tqdm==4.66.5

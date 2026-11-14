@@ -1,0 +1,37 @@
+# Secrets - never commit API keys
+.env
+.env.*
+!.env.example
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# App data generated at runtime
+vector_db/
+downloads/
+*.wav
+*.converted.wav
+*_chunk_*.wav
+
+# Model caches
+.cache/
+whisper_models/
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
